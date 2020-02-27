@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.:: TimeSelector ::.</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+</head>
+<body>
+
+<div class="container-geral">
+    <div id="container-list">
+        <div class="list">
+
+        </div>
+    </div>
+
+    <div id="container-form">
+        <img src="logo.png" alt="" srcset="">
+
+        <form  id="form">
+            <label for="">Nome</label>
+            <input id='nome' type="text" name="nome">
+
+            <label for="">Local/Quadra que pretende jogar</label>
+            <input id='local' type="text" name="local">
+
+            <label for="">Posição</label>
+            <input id='posicao' type="text" name="posicao">
+
+            <label for="">Nome Preferencial para o time</label>
+            <input id='time' type="text" name="nomeDoTime">
+
+            <div class="input-2">
+                <div>
+                    <label for="">Horario de entrada</label>
+                    <input id='horaInicial' type="text" name="horaDeEntrada">
+                </div>
+                
+                <div>
+                    <label for="">Horaio de saida</label>
+                    <input id='horaFinal' type="text" name="horaDeSaida">
+                </div>
+                
+            </div>
+            
+
+            <input id="btn-submit" type="button" value="Registrar">
+        </form>
+        
+        <div id="sucesso" class="sucesso">
+            <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            
+            Sucesso! <br> Aguarde a montagem do time!
+            
+        </div>
+    </div>
+
+</div>
+    
+<script src="/js/main.js"></script>
+</body>
+</html>
