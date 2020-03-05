@@ -1,0 +1,86 @@
+#list-times{
+    
+}
+
+.item-list{
+    margin: 20px;
+    list-style-type: none;
+    min-height: 160px;
+
+
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    /* width: 100%; */
+    
+}
+
+.box1-li{
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box2-li{
+    width: 180px;
+    padding: 10px;
+}
+
+.nome-time{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.local-time{
+    font-size: 16px;
+}
+
+.hora-time{
+    font-size: 16px;
+}
+
+.btn-entrar{
+    margin-top: 5px;
+    height: 35px;
+    width: 150px;
+    border: none;
+    background-color: #01942A;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    user-select: none;
+    cursor: pointer;
+}
+
+.btn-entrar:active{
+    background-color: rgb(4, 110, 34);
+}
+
+.label-time{
+    font-size: 14px;
+    color: #7B7B7B;
+
+}
+
+.input-time{
+    width: 141px;
+    height: 20px;
+    margin-top: 1px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+
+.select-posicao-time{
+    height: 30px;
+    width: 150px;
+    margin-top: 1px;
+    margin-bottom: 5px;
+}
+

@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: roboto;
 }
 
 body {
@@ -73,6 +74,12 @@ form input{
     font-size: 16px;
 }
 
+form select{
+    height: 30px;
+    padding-left: 5px;
+    font-size: 16px;
+}
+
 .input-2 {
     width: 100%;
     display: flex;
@@ -84,8 +91,8 @@ form input{
     margin-right: 20px;
 }
 
-.input-2 input {
-    max-width: 160px;
+.input-2 select {
+    width: 160px;
 }
 
 #btn-submit{
@@ -96,7 +103,10 @@ form input{
     color: white;
     font-size: 22px;
     font-weight: bold;
+}
 
+#btn-submit:active{
+    background-color: rgb(4, 110, 34);
 }
 
 .sucesso{
@@ -112,13 +122,37 @@ form input{
     text-align: center;
     transition: all 0.5s;
     
-    font-family: roboto;
+    
     font-size: 20px;
 
     box-shadow: 0px 30px 60px #00000070   
 }
 
+.sucesso p {
+    margin-top: 10px;
+    padding: 0px 15px;
+}
 
+#btn-cancel{
+    height: 35px;
+    background-color: white;
+    color: rgb(4, 110, 34);
+    font-size: 16px;
+    display: flex;
+    padding: 0px 15px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-top: 20px;
+    user-select: none;
+    cursor: pointer;
+    box-shadow: 0px 15px 30px #00000070;
+
+}
+
+#btn-cancel:active{
+    background-color: #c2c2c2;
+}
 
 /* loading */
 

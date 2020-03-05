@@ -7,6 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/times.css">
 
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
 </head>
@@ -14,9 +15,9 @@
 
 <div class="container-geral">
     <div id="container-list">
-        <div class="list">
+        <ul class="list" id="list-times">
 
-        </div>
+        </ul>
     </div>
 
     <div id="container-form">
@@ -30,7 +31,10 @@
             <input id='local' type="text" name="local">
 
             <label for="">Posição</label>
-            <input id='posicao' type="text" name="posicao">
+            <select id='posicao' type="text" name="posicao">
+                <option value="linha">Linha</option>
+                <option value="goleiro">Goleiro</option>
+            </select>
 
             <label for="">Nome Preferencial para o time</label>
             <input id='time' type="text" name="nomeDoTime">
@@ -38,12 +42,12 @@
             <div class="input-2">
                 <div>
                     <label for="">Horario de entrada</label>
-                    <input id='horaInicial' type="text" name="horaDeEntrada">
+                    <select id='horaInicial' name="horaDeEntrada"></select>
                 </div>
                 
                 <div>
                     <label for="">Horaio de saida</label>
-                    <input id='horaFinal' type="text" name="horaDeSaida">
+                    <select id='horaFinal' name="horaDeSaida"></select>
                 </div>
                 
             </div>
@@ -55,13 +59,16 @@
         <div id="sucesso" class="sucesso">
             <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
             
-            Sucesso! <br> Aguarde a montagem do time!
+            <p id='msg-sucesso'></p>
+
+            <div id="btn-cancel">Cancelar</div>
             
         </div>
     </div>
 
 </div>
     
-<script src="js/main.js"></script>
+<script src="js/jogador.js"></script>
+<script src="js/time.js"></script>
 </body>
 </html>
