@@ -80,6 +80,7 @@ submit.addEventListener('click',function () {
                                 //console.log(jogador)
                                 localStorage.setItem('jogador',JSON.stringify(jogador));
                                 openLoader("Sucesso! Aguarde a montagem do time!", jogador.id);
+                                getTimes();
                             }
                         }
                     }

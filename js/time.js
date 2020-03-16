@@ -59,6 +59,7 @@ function montarTime(id) {
                 //console.log(jogador)
                 localStorage.setItem('jogador',JSON.stringify(jogador));
                 openLoader("Sucesso! Aguarde a montagem do time!", jogador.id);
+                getTimes();
             }
         }
     }
@@ -72,11 +73,16 @@ function montarTime(id) {
 // ------------------------- função para gerar a lista dos times -----------------------------
 
 function gerarLista(data) {
+    
+    list.innerHTML = '<span id="label-list">Times aguardando montagem:</span>';
 
     data.forEach(time => {
 
+        
+
         if(time.completo == false){
 
+            
             var nome = document.createElement('span');
             nome.setAttribute('class','nome-time');
 
