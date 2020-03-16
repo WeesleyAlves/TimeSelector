@@ -24,12 +24,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     
+}
+
+#label-list{
+    position: fixed;
+    background-color: #ffffff;
+    width: 660px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+    font-size: 18px;
 }
 
 .list{
     width: 660px;
-    height: 550px;
+    height: 500px;
     background-color: #ffffff;
     box-shadow: 0px 40px 80px #00000070;
     
