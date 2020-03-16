@@ -6,5 +6,5 @@ Esta sendo criado em conjunto com um colega com fins de estudo, nesta versão fi
 
 **Disponivel em:** https://weesleyalves.github.io/TimeSelector/
 
-Obs: ainda esta sendo desenvolvido o back-end, então não esta funcional.
+Status: trabalhando para deixar responsivo para mobile.
 
