@@ -1,5 +1,5 @@
 #list-times{
-    
+    overflow: auto;
 }
 
 .item-list{
@@ -41,7 +41,7 @@
     font-size: 16px;
 }
 
-.btn-entrar{
+.btn-entrar-time{
     margin-top: 5px;
     height: 35px;
     width: 150px;

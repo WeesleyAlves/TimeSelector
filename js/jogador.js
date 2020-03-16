@@ -31,10 +31,9 @@ submit.addEventListener('click',function () {
         erro = 'Preencha a hora de saida corretamente, apenas numeros'
     else{
         var data = {
-            'nome' : nome.value,
             'nomeDoTime': time.value,
-            'posicao': posicao.value,
-            'horaJogo': horaInicial.value+' - '+horaFinal.value,
+            'horaDeEntrada': horaInicial.value,
+            'horaDeSaida': horaFinal.value,
             'local': local.value            
         }
     }
@@ -44,7 +43,7 @@ submit.addEventListener('click',function () {
     else{
         
         var xhr = new XMLHttpRequest();
-        var url = "http://api-futsal-time.herokuapp.com/jogador/";
+        var url = "http://api-futsal-time.herokuapp.com/time/";
 
         xhr.open('POST', url, true);
 
@@ -54,10 +53,39 @@ submit.addEventListener('click',function () {
         xhr.onreadystatechange = function() {
             if(xhr.readyState == 4){
                 if(xhr.status == 200){
-                    alert('Adicionado a fila!');
-                    console.log(xhr.response);
-                    localStorage.setItem('jogador',xhr.response);
-                    openLoader("Sucesso! Aguarde a montagem do time!", JSON.parse(xhr.response).id);
+
+                    var time = JSON.parse(xhr.response);
+
+                    var jogador = {
+                        'nome': nome.value,
+                        'posicao': posicao.value
+                    };
+
+                    url = "http://api-futsal-time.herokuapp.com/time/montar/"+time.id;
+
+
+                    xhr.open('POST', url, true);
+
+                    xhr.setRequestHeader('Content-type','application/json');
+                    xhr.setRequestHeader('Data-Type','json');
+
+                    xhr.onreadystatechange = function() {
+                        if(xhr.readyState == 4){
+                            if(xhr.status == 200){
+                                alert('Adicionado a fila!');
+                                //console.log(xhr.response);
+                                var jogador = JSON.parse(xhr.response);
+                                jogador = jogador.timeMontado.jogadores;
+                                jogador = jogador[jogador.length - 1];
+                                //console.log(jogador)
+                                localStorage.setItem('jogador',JSON.stringify(jogador));
+                                openLoader("Sucesso! Aguarde a montagem do time!", jogador.id);
+                            }
+                        }
+                    }
+
+                    xhr.send(JSON.stringify(jogador));
+                    
                 }
             }
         }
@@ -84,7 +112,7 @@ function verificarStatus() {
                 nuvem.forEach(jogador => {
                     if(jogador.id == local.id){
                         openLoader("Já na fila! Aguarde a montagem do time!", local.id);
-                        console.log(local);
+                        //console.log(local);
                     }
                 });
 
@@ -109,7 +137,7 @@ function cancelarFila(id) {
     xhr.onreadystatechange = function () {
         if(xhr.readyState == 4){
             if(xhr.status == 200){
-                console.log(xhr.response);
+                //console.log(xhr.response);
                 alert("Fila Cancelada");
                 location.reload(true);
             }
@@ -120,24 +148,33 @@ function cancelarFila(id) {
 
 }
 
-
-
-
 // ====================================== FIM REQUESTS ===================================================================
 
 
 
 
 
-// ----------------------------------------- função para abrir o loader no lugar do form de adiçao de jogador ------------------------------
+// ------------------- função para abrir o loader no lugar do form de adiçao de jogador e blquear o acesso a montagem --------------------------------
 
 function openLoader(msg, id) {
     var p = document.getElementById('msg-sucesso');
-
+    var inputs = document.getElementsByClassName('input-time');
+    var selects = document.getElementsByClassName('select-posicao-time');
+    var buttons = document.getElementsByClassName('btn-entrar-time');
+   
+    for(i=0; i<inputs.length; i++){
+        inputs[i].setAttribute("disabled","true");
+        selects[i].setAttribute('disabled','true');
+        buttons[i].setAttribute('onclick','');
+        buttons[i].style.cursor = 'not-allowed';
+        console.log(inputs[i]);
+    }
+    
     p.innerHTML = msg;
     form.style.display = 'none';
     windowSucess.style.display = 'flex';
     bntCancel.setAttribute('onclick','cancelarFila('+id+')');
+
 }
 
 
@@ -169,23 +206,13 @@ function gerarSelectHora() {
                 option.innerHTML = i+":30";
             }
             horaFinal.appendChild(option);
-        }
-        
-        
-
-        
+        }        
     }
-    
 }
-
-
-
-
 
 
 //  ------------------- funções de iniciação do projeto -------------------
 
-
 gerarSelectHora();
-verificarStatus();
+
 
