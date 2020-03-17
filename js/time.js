@@ -74,7 +74,7 @@ function montarTime(id) {
 
 function gerarLista(data) {
     
-    list.innerHTML = '<span id="label-list">Times aguardando montagem:</span>';
+    list.innerHTML =   '';
 
     data.forEach(time => {
 
