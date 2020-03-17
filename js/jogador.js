@@ -168,7 +168,6 @@ function openLoader(msg, id) {
         selects[i].setAttribute('disabled','true');
         buttons[i].setAttribute('onclick','');
         buttons[i].style.cursor = 'not-allowed';
-        console.log(inputs[i]);
     }
     
     p.innerHTML = msg;
