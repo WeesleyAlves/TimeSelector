@@ -6,5 +6,5 @@ Esta sendo criado em conjunto com um colega com fins de estudo, nesta versão fi
 
 **Disponivel em:** https://weesleyalves.github.io/TimeSelector/
 
-Status: trabalhando para deixar responsivo para mobile.
+Responsivo até 450px de largura.
 
