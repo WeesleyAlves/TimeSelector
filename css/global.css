@@ -258,3 +258,27 @@ body {
     }
   }
   
+.loading {
+    width: 100px;
+    height: 100px;
+    /* background-color: red; */
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 0 auto;
+}
+
+#loading {
+    margin-left: 0px;
+    margin-top: 0px;
+}
+
+
+#loading div{
+    color: #01942A;
+    border: 8px solid #01942A;
+    border-color: #01942A transparent transparent transparent;
+    
+}
+    
+}

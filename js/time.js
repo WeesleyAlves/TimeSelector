@@ -73,7 +73,7 @@ function montarTime(id) {
 // ------------------------- função para gerar a lista dos times -----------------------------
 
 function gerarLista(data) {
-    
+
     list.innerHTML =   '';
 
     data.forEach(time => {
