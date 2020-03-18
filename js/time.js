@@ -82,6 +82,9 @@ function gerarLista(data) {
 
         if(time.completo == false){
 
+            var equipe = time.timeMontado.jogadores;
+
+            console.log(equipe);
             
             var nome = document.createElement('span');
             nome.setAttribute('class','nome-time');
@@ -137,10 +140,16 @@ function gerarLista(data) {
             option2.setAttribute('value','Goleiro');
             option2.innerHTML = 'Goleiro';
             
-            select.appendChild(option1);
+            console.log(equipe);
+            if(equipe.length < 4 || time.temGoleiro == true){
+                select.appendChild(option1);
+            }
+            
             if(time.temGoleiro == false){
                 select.appendChild(option2);
             }
+
+            
             
             var btn = document.createElement('div');
             btn.setAttribute('class','btn-entrar-time');
