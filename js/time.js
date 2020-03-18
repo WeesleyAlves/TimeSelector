@@ -83,8 +83,6 @@ function gerarLista(data) {
         if(time.completo == false){
 
             var equipe = time.timeMontado.jogadores;
-
-            console.log(equipe);
             
             var nome = document.createElement('span');
             nome.setAttribute('class','nome-time');
@@ -149,8 +147,6 @@ function gerarLista(data) {
                 select.appendChild(option2);
             }
 
-            
-            
             var btn = document.createElement('div');
             btn.setAttribute('class','btn-entrar-time');
             btn.setAttribute('onclick','montarTime('+time.id+')');
